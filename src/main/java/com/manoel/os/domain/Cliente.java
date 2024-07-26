@@ -8,7 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 
 @Entity
-public class Cliente extends Pessoa implements Serializable{
+public class Cliente extends Pessoa implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@OneToMany(mappedBy = "cliente")

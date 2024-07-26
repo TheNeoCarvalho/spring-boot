@@ -10,12 +10,12 @@ import com.manoel.os.services.DBService;
 @Configuration(proxyBeanMethods = false)
 @Profile("test")
 public class TestConfig {
-	
+
 	@Autowired
 	private DBService dbService;
 
-    @Bean
-    void instanciaDB() {
+	@Bean
+	void instanciaDB() {
 		this.dbService.instanciaDB();
 	}
 

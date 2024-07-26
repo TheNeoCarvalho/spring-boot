@@ -11,20 +11,20 @@ import com.manoel.os.services.DBService;
 @Configuration(proxyBeanMethods = false)
 @Profile("dev")
 public class DevConfig {
-	
+
 	@Autowired
 	private DBService dbService;
-	
+
 	@Value("${spring.jpa.hibernate.ddl-auto}")
 	private String ddl;
 
-    @Bean
-    public boolean instanciaDB() {
-    	
-    	if(ddl.equals("create")) {
-    		this.dbService.instanciaDB();    		
-    	}
-    	return false;
+	@Bean
+	public boolean instanciaDB() {
+
+		if (ddl.equals("create")) {
+			this.dbService.instanciaDB();
+		}
+		return false;
 	}
 
 }

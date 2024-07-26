@@ -16,26 +16,25 @@ import jakarta.persistence.ManyToOne;
 
 @Entity
 public class OS {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	@JsonFormat(pattern = "dd/mm/yyyy HH:mm")
 	private LocalDateTime dataAbertura;
 
 	@JsonFormat(pattern = "dd/mm/yyyy HH:mm")
 	private LocalDateTime dataFechamento;
-	
-	
+
 	private Integer prioridade;
 	private String observacoes;
 	private Integer status;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "tecnico_id")
 	private Tecnico tecnico;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "cliente_id")
 	private Cliente cliente;
@@ -47,14 +46,14 @@ public class OS {
 		this.setStatus(Status.ABERTO);
 	}
 
-	public OS(Integer id, Prioridade prioridade,
-			String observacoes, Status status, Tecnico tecnico, Cliente cliente) {
+	public OS(Integer id, Prioridade prioridade, String observacoes, Status status, Tecnico tecnico, Cliente cliente) {
 		super();
 		this.id = id;
 		this.setDataAbertura(LocalDateTime.now());
 		this.prioridade = (prioridade == null) ? 0 : prioridade.getCod();
 		this.observacoes = observacoes;
-		this.status = (status == null) ? 0 : prioridade.getCod();;
+		this.status = (status == null) ? 0 : prioridade.getCod();
+		;
 		this.tecnico = tecnico;
 		this.cliente = cliente;
 	}

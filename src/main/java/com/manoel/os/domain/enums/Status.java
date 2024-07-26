@@ -2,7 +2,6 @@ package com.manoel.os.domain.enums;
 
 public enum Status {
 
-
 	ABERTO(0, "ABERTO"), ANDAMENTO(1, "ANDAMENTO"), ENCERRADO(2, "ENCERRADO");
 
 	private Integer cod;
@@ -20,13 +19,13 @@ public enum Status {
 	public String getDescricao() {
 		return descricao;
 	}
-	
+
 	public static Status toEnum(Integer cod) {
-		if(cod == null) {
+		if (cod == null) {
 			return null;
 		}
-		for(Status x: Status.values()) {
-			if(cod.equals(x.getCod())) {
+		for (Status x : Status.values()) {
+			if (cod.equals(x.getCod())) {
 				return x;
 			}
 		}

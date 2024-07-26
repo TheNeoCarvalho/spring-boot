@@ -9,12 +9,12 @@ import jakarta.persistence.OneToMany;
 import java.util.ArrayList;
 
 @Entity
-public class Tecnico extends Pessoa implements Serializable{
+public class Tecnico extends Pessoa implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@OneToMany(mappedBy = "tecnico")
 	private List<OS> list = new ArrayList<>();
-	
+
 	public Tecnico() {
 		super();
 	}

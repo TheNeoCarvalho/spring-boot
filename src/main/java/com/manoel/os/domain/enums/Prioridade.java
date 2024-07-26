@@ -19,13 +19,13 @@ public enum Prioridade {
 	public String getDescricao() {
 		return descricao;
 	}
-	
+
 	public static Prioridade toEnum(Integer cod) {
-		if(cod == null) {
+		if (cod == null) {
 			return null;
 		}
-		for(Prioridade x: Prioridade.values()) {
-			if(cod.equals(x.getCod())) {
+		for (Prioridade x : Prioridade.values()) {
+			if (cod.equals(x.getCod())) {
 				return x;
 			}
 		}
