@@ -1,5 +1,6 @@
 package com.manoel.os.domain;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import org.hibernate.validator.constraints.br.CPF;
@@ -10,7 +11,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public abstract class Pessoa {
+public abstract class Pessoa implements Serializable {
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
